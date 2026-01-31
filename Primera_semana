@@ -1,0 +1,46 @@
+Para un mejor estudio de CCS, JavaScript y HTML, creamos el NotebookLM 
+
+Link del Notebook: https://notebooklm.google.com/notebook/b61e0424-0b5d-44b0-b3d0-74c41aa0b130
+
+hay flashcards de los temas vistos en la primera semana
+
+Operadores aritmeticos JavaScript
+suma + ejemplo 2 + 2 = 4
+resta - ejemplo 2 - 2 = 0
+multiplicacion * ejemplo 2 * 2 = 4
+division / ejemplo 2 / 2 = 1
+modulo % ejemplo 2 % 2 = 0
+potencia ** ejemplo 2 ** 2 = 4
+
+operadores de incremento y decremento
+++ ejemplo 2++ = 3
+-- ejemplo 2-- = 1
+
+operadores de asignacion
+= ejemplo 2 = 2
++= ejemplo 2 += 2
+-= ejemplo 2 -= 2
+*= ejemplo 2 *= 2
+/= ejemplo 2 /= 2
+%= ejemplo 2 %= 2
+**= ejemplo 2 **= 2
+
+operadores relacionales
+== ejemplo 2 == 2
+!= ejemplo 2 != 2
+> ejemplo 2 > 2
+< ejemplo 2 < 2
+>= ejemplo 2 >= 2
+<= ejemplo 2 <= 2
+
+operadores logicos
+&& ejemplo 2 && 2
+|| ejemplo 2 || 2
+! ejemplo !2
+
+operador ternario
+let edad = 18;
+edad >= 18 ? "Mayor de edad" : "Menor de edad";
+console.log(edad);
+
+
