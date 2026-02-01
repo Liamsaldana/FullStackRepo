@@ -27,6 +27,8 @@ body {
     color: var(--text-main);
     line-height: 1.6;
     padding: 40px 20px;
+    transition: background-color 0.5s ease;
+    /* Para que el cambio de color de JS sea suave */
 }
 
 /* Contenedor principal que centra el contenido */
@@ -35,11 +37,38 @@ body {
     margin: 0 auto;
 }
 
+/* --- Botón Especial para JS (Nuevo) --- */
+.special-btn {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    padding: 12px 24px;
+    background-color: var(--primary);
+    color: var(--background);
+    border: none;
+    border-radius: 50px;
+    font-weight: bold;
+    font-family: 'Oswald', sans-serif;
+    text-transform: uppercase;
+    cursor: pointer;
+    z-index: 1000;
+    box-shadow: 0 4px 15px rgba(195, 155, 51, 0.4);
+    transition: all 0.3s ease;
+}
+
+.special-btn:hover {
+    transform: scale(1.05);
+    background-color: var(--white);
+}
+
+/*Aprendiendo a alinear texto y fotos y ponerle color a las cosas, linea dorada a la izquierda*/
+
 /* Sección del Encabezado (Header) */
 .profile-header {
     display: flex;
-    /* Usamos Flexbox para alinear foto y texto lado a lado */
+    /* Usamos Flexbox para alinear foto y texto lado a lado, este determina que los elementos se alineen horizontalmente*/
     align-items: center;
+    /* Este determina que los elementos se alineen verticalmente*/
     gap: 40px;
     padding: 40px;
     background: var(--card-bg);
@@ -108,6 +137,8 @@ h2 {
     display: inline-block;
 }
 
+/*Aprendiendo de CSS, estilo y efecto de pasar el mouse*/
+
 /* Estilo de las tarjetas (Cards) */
 .card {
     background: var(--card-bg);
@@ -158,6 +189,8 @@ h2 {
     position: relative;
     cursor: pointer;
 }
+
+/*Aorendiendo, que tenga ese gris inicial y al pasar el mouse se vuelva a color*/
 
 /* Imágenes dentro del portafolio */
 .portfolio-item img {
