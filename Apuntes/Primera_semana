@@ -4,6 +4,189 @@ Link del Notebook: https://notebooklm.google.com/notebook/b61e0424-0b5d-44b0-b3d
 
 hay flashcards de los temas vistos en la primera semana
 
+Bootstrap y fundamentos de desarrollo web
+1. ¿Qué es Bootstrap?
+
+Bootstrap es un framework de desarrollo frontend que facilita la creación de sitios y aplicaciones web responsivos, consistentes y visualmente atractivos. Está basado en HTML, CSS y JavaScript, y proporciona componentes y estilos predefinidos que evitan tener que programar todo desde cero.
+
+Bootstrap se enfoca en el principio mobile-first, lo que significa que el diseño está pensado primero para dispositivos móviles y luego se adapta a pantallas más grandes.
+
+Principales ventajas:
+
+Diseño responsive automático
+
+Componentes reutilizables (botones, formularios, navbar, alertas, modales)
+
+Sistema de grid flexible
+
+Ahorro de tiempo en desarrollo
+
+2. ¿Cómo se implementa Bootstrap?
+
+La forma más sencilla de usar Bootstrap es mediante CDN, enlazando los archivos oficiales desde la documentación.
+
+Pasos de implementación con CDN
+
+Crear un archivo HTML
+
+Agregar la etiqueta <meta viewport>
+
+Enlazar el CSS de Bootstrap
+
+Enlazar el JavaScript Bundle de Bootstrap
+
+Estructura base recomendada
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Bootstrap Demo</title>
+
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+
+  <h1 class="text-center mt-4">Bootstrap funcionando</h1>
+
+  <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
+
+
+El archivo bootstrap.bundle.min.js incluye las dependencias necesarias para los componentes interactivos.
+
+3. Ejemplos básicos de Bootstrap
+Ejemplo 1: Sistema Grid
+
+El sistema grid organiza el contenido en filas y columnas responsivas.
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-8 bg-light">Contenido principal</div>
+    <div class="col-md-4 bg-secondary text-white">Barra lateral</div>
+  </div>
+</div>
+
+Ejemplo 2: Botones
+
+Bootstrap incluye estilos predefinidos para botones.
+
+<button class="btn btn-primary">Aceptar</button>
+<button class="btn btn-danger">Eliminar</button>
+
+Ejemplo 3: Alerta
+<div class="alert alert-success" role="alert">
+  Acción realizada correctamente
+</div>
+
+4. Mini guía de HTML
+¿Qué es HTML?
+
+HTML (HyperText Markup Language) es el lenguaje que define la estructura del contenido de una página web.
+
+HTML indica qué es cada elemento: título, párrafo, botón, imagen, etc.
+
+Ejemplo básico
+<h1>Título</h1>
+<p>Este es un párrafo</p>
+<button>Enviar</button>
+
+
+Bootstrap se aplica directamente sobre HTML mediante clases.
+
+5. Mini guía de CSS
+¿Qué es CSS?
+
+CSS (Cascading Style Sheets) controla la apariencia visual del HTML:
+
+Colores
+
+Tipografía
+
+Tamaños
+
+Espaciados
+
+Diseño
+
+Ejemplo CSS simple
+p {
+  color: blue;
+  font-size: 16px;
+}
+
+Relación con Bootstrap
+
+Bootstrap es una gran colección de reglas CSS ya hechas, por eso basta con usar clases:
+
+<p class="text-center text-danger fw-bold">
+  Texto centrado y rojo
+</p>
+
+6. Mini guía de JavaScript
+¿Qué es JavaScript?
+
+JavaScript añade interactividad y lógica a una página web:
+
+Responder a eventos
+
+Mostrar mensajes
+
+Manipular elementos
+
+Validar formularios
+
+Ejemplo básico
+<button onclick="saludar()">Click</button>
+
+<script>
+  function saludar() {
+    alert("Hola");
+  }
+</script>
+
+JavaScript y Bootstrap
+
+Bootstrap utiliza JavaScript para componentes interactivos como:
+
+Modales
+
+Dropdowns
+
+Tooltips
+
+Carruseles
+
+Ejemplo sin escribir JS manual:
+
+<button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+  Abrir modal
+</button>
+
+7. Relación entre Bootstrap, HTML, CSS y JavaScript
+Tecnología	Función
+HTML	Estructura
+CSS	Diseño
+JavaScript	Interactividad
+Bootstrap	Framework que integra CSS y JS sobre HTML
+
+Bootstrap no reemplaza HTML, CSS ni JavaScript, sino que los organiza y optimiza.
+
+8. Referencias (APA)
+
+Bootstrap. (s. f.). Get started with Bootstrap (v5.3). Recuperado el 30 de enero de 2026, de https://getbootstrap.com/docs/5.3/getting-started/introduction/
+
+Bootstrap. (s. f.). Grid system. Recuperado el 30 de enero de 2026, de https://getbootstrap.com/docs/5.0/layout/grid/
+
+Mozilla Developer Network. (s. f.). HTML basics. Recuperado el 30 de enero de 2026, de https://developer.mozilla.org/en-US/docs/Learn/Getting_started_with_the_web/HTML_basics
+
+Mozilla Developer Network. (s. f.). CSS basics. Recuperado el 30 de enero de 2026, de https://developer.mozilla.org/en-US/docs/Learn/Getting_started_with_the_web/CSS_basics
+
+Mozilla Developer Network. (s. f.). JavaScript basics. Recuperado el 30 de enero de 2026, de https://developer.mozilla.org/en-US/docs/Learn/Getting_started_with_the_web/JavaScript_basics
+
 Operadores aritmeticos JavaScript
 suma + ejemplo 2 + 2 = 4
 resta - ejemplo 2 - 2 = 0
