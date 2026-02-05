@@ -1,0 +1,31 @@
+Inicio del sistema
+1.1 Cargar las tareas guardadas desde el almacenamiento local.
+1.2 Mostrar la lista de tareas en pantalla.
+
+Crear tarea
+2.1 Solicitar al usuario el título, descripción, fecha límite y prioridad.
+2.2 Verificar que el título y la fecha límite no estén vacíos.
+2.3 Crear una nueva tarea con un identificador único.
+2.4 Agregar la tarea a la lista de tareas.
+2.5 Guardar la lista de tareas actualizada.
+2.6 Actualizar la vista de las tareas.
+
+Ver tareas
+3.1 Recorrer la lista de tareas.
+3.2 Mostrar cada tarea con su información correspondiente.
+
+Editar tarea
+4.1 Seleccionar la tarea mediante su identificador.
+4.2 Solicitar al usuario los nuevos datos de la tarea.
+4.3 Actualizar los datos de la tarea seleccionada.
+4.4 Guardar los cambios realizados.
+4.5 Actualizar la vista de las tareas.
+
+Eliminar tarea
+5.1 Seleccionar la tarea mediante su identificador.
+5.2 Eliminar la tarea de la lista.
+5.3 Guardar la lista de tareas actualizada.
+5.4 Actualizar la vista de las tareas.
+
+Fin del sistema
+

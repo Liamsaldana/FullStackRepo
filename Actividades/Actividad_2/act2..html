@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Ticket Master</title>
+
+    <style>
+        body {
+            background: #0f172a;
+            color: #e5e7eb;
+            font-family: Arial, Helvetica, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+
+        .container {
+            background: #020617;
+            width: 100%;
+            max-width: 550px;
+            padding: 20px;
+            border-radius: 10px;
+        }
+
+        h1 {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .task-form {
+            display: grid;
+            gap: 10px;
+        }
+
+        input,
+        textarea,
+        select,
+        button {
+            padding: 10px;
+            border-radius: 6px;
+            border: none;
+        }
+
+        textarea {
+            resize: none;
+        }
+
+        button {
+            background: #38bdf8;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        ul {
+            list-style: none;
+            padding: 0;
+            margin-top: 20px;
+        }
+
+        .task {
+            border: 1px solid #1e293b;
+            border-radius: 6px;
+            padding: 10px;
+            margin-bottom: 10px;
+        }
+
+        .task-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .priority {
+            padding: 3px 8px;
+            border-radius: 4px;
+            font-size: 12px;
+            font-weight: bold;
+        }
+
+        .Alta {
+            background: #ef4444;
+        }
+
+        .Media {
+            background: #facc15;
+            color: #000;
+        }
+
+        .Baja {
+            background: #22c55e;
+        }
+
+        .actions {
+            margin-top: 10px;
+            text-align: right;
+        }
+
+        .edit {
+            background: #facc15;
+        }
+
+        .delete {
+            background: #ef4444;
+            color: white;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+        <h1>🎫 Got It Tickets</h1>
+
+        <div class="task-form">
+            <input type="text" id="title" placeholder="Título">
+            <textarea id="description" placeholder="Descripción"></textarea>
+            <input type="date" id="dueDate">
+            <select id="priority">
+                <option value="Baja">Baja</option>
+                <option value="Media">Media</option>
+                <option value="Alta">Alta</option>
+            </select>
+            <button onclick="taskManager.createTask()">Crear Ticket</button>
+        </div>
+
+        <ul id="taskList"></ul>
+    </div>
+
+    <script>
+        // ===== Clase Task =====
+        class Task {
+            constructor(id, title, description, dueDate, priority) {
+                this.id = id;
+                this.title = title;
+                this.description = description;
+                this.dueDate = dueDate;
+                this.priority = priority;
+            }
+        }
+
+        // ===== Clase TaskManager =====
+        class TaskManager {
+            constructor() {
+                this.tasks = this.load();
+                this.renderTasks();
+            }
+
+            createTask() {
+                const title = document.getElementById("title").value.trim();
+                const description = document.getElementById("description").value.trim();
+                const dueDate = document.getElementById("dueDate").value;
+                const priority = document.getElementById("priority").value;
+
+                if (!title || !dueDate) return;
+
+                const task = new Task(
+                    Date.now(),
+                    title,
+                    description,
+                    dueDate,
+                    priority
+                );
+
+                this.tasks.push(task);
+                this.save();
+                this.clearForm();
+                this.renderTasks();
+            }
+
+            updateTask(id) {
+                const task = this.tasks.find(t => t.id === id);
+
+                const title = prompt("Título:", task.title);
+                const description = prompt("Descripción:", task.description);
+                const dueDate = prompt("Fecha límite:", task.dueDate);
+                const priority = prompt("Prioridad (Baja, Media, Alta):", task.priority);
+
+                if (!title || !dueDate || !priority) return;
+
+                task.title = title;
+                task.description = description;
+                task.dueDate = dueDate;
+                task.priority = priority;
+
+                this.save();
+                this.renderTasks();
+            }
+
+            deleteTask(id) {
+                this.tasks = this.tasks.filter(t => t.id !== id);
+                this.save();
+                this.renderTasks();
+            }
+
+            save() {
+                localStorage.setItem("tasks", JSON.stringify(this.tasks));
+            }
+
+            load() {
+                return JSON.parse(localStorage.getItem("tasks")) || [];
+            }
+
+            clearForm() {
+                document.getElementById("title").value = "";
+                document.getElementById("description").value = "";
+                document.getElementById("dueDate").value = "";
+                document.getElementById("priority").value = "Baja";
+            }
+
+            renderTasks() {
+                const list = document.getElementById("taskList");
+                list.innerHTML = "";
+
+                this.tasks.forEach(task => {
+                    const li = document.createElement("li");
+                    li.className = "task";
+
+                    li.innerHTML = `
+                    <div class="task-header">
+                        <strong>${task.title}</strong>
+                        <span class="priority ${task.priority}">${task.priority}</span>
+                    </div>
+                    <p>${task.description || "Sin descripción"}</p>
+                    <small>📅 Fecha límite: ${task.dueDate}</small>
+
+                    <div class="actions">
+                        <button class="edit" onclick="taskManager.updateTask(${task.id})">✏️</button>
+                        <button class="delete" onclick="taskManager.deleteTask(${task.id})">🗑️</button>
+                    </div>
+                `;
+
+                    list.appendChild(li);
+                });
+            }
+        }
+
+        const taskManager = new TaskManager();
+    </script>
+
+</body>
+
+</html>
